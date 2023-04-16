@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+{% load static tailwind_tags %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A client portal which allows lawyers to securely share information online with their clients. This includes documents, messages, invoices, and much more.">
+    <title>CounselHub</title>
+
+    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'users/styles.css'%}">
+    <link rel="shortcut icon" href="{%static 'assets/favicon.png'%}" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {%block content%}
+
+    {%endblock%}
+</body>
+
+</html>

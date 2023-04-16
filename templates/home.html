@@ -1,0 +1,42 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block title%}Home{%endblock%}
+
+{%block content%}
+
+<div class="relative">
+    <img src="{%static 'assets/ellipse.png'%}" class="absolute top-0 right-0 ellipse z-0">
+    <nav class="flex justify-between p-10 z-10 sticky w-screen">
+        <span class="flex justify-center items-center">
+            <img src="{%static 'assets/favicon.png'%}">
+            <a href="/" class="text-3xl font-semibold ml-4">CounselHub</a>
+        </span>
+        <span class="nav-links text-2xl">
+            <a href="{% url 'login' %}" class="mx-4 text-tertiary font-semibold">Login</a>
+            <a href="{% url 'register' %}" class="p-4 mx-4 rounded-full bg-tertiary font-semibold">Register</a>
+        </span>
+    </nav>
+    <main class="flex justify-between relative z-10">
+        <div class="main-about flex flex-col justify-center items-center">
+            <h1 class="text-primary text-5xl font-bold text-center">CounselHub</h1>
+            <p class="px-20 my-4 text-justify text-2xl">
+                A client portal which allows lawyers to securely share information online with their clients. This
+                includes
+                documents,
+                messages, invoices, and much more.
+            </p>
+            <a href="{%url 'login'%}" class="bg-primary text-white py-4 px-6 rounded-full flex">
+                <p class="mr-4">Get Started</p>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+            </a>
+        </div>
+        <div class="main-image">
+            <img src="{%static 'assets/landing-img.png'%}" class="w-3/4">
+        </div>
+    </main>
+</div>
+
+{%endblock%}
