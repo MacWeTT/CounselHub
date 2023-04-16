@@ -1,0 +1,25 @@
+{%extends 'index.html'%}
+{%load static%}
+
+{%block content%}
+
+<main class="login relative w-screen h-screen">
+    <img src="{%static 'assets/ellipse.png'%}" class="absolute top-0 right-0 ellipse z-0">
+    {%if user.profile.is_complete%}
+    <main>
+        <h1>Your profile</h1>
+    </main>
+    {%else%}
+    <div class="login-container p-10 flex flex-col">
+        <h1 class="text-3xl font-bold text-primary text-center">Complete your profile</h1>
+        <form method="post" class="m-4 text-2xl">
+            {%csrf_token%}
+            {{u_form.as_p}}
+            {{p_form.as_p}}
+            <input type="submit" value="Submit" class="p-4 my-8 rounded-lg w-full bg-primary text-white font-bold">
+        </form>
+    </div>
+    {%endif%}
+</main>
+
+{%endblock%}

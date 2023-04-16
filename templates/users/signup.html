@@ -1,0 +1,33 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block title%}SignUp | CounselHub{%endblock%}
+
+{%block content%}
+
+<main class="login relative w-screen h-screen">
+    <img src="{%static 'assets/ellipse.png'%}" class="absolute top-0 right-0 ellipse z-0">
+    <div class="login-container p-10 flex flex-col">
+        <h1 class="text-3xl font-bold text-primary text-center">Register with</h1>
+        <span class="flex justify-center my-4">
+            <a href="/" class="p-4 px-6 rounded-lg text-black font-bold text-4xl border-gray-500">
+                <i class="fa fa-google"></i>
+            </a>
+            <a href="/" class="p-4 px-6 rounded-lg text-black font-bold text-4xl border-gray-300">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="/" class="p-4 px-6 rounded-lg text-black font-bold text-4xl border-gray-300">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </span>
+        <h2 class="text-center text-secondary font-bold text-2xl">or</h2>
+        <form method="post" class="m-4 text-2xl">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit" value="Sign Up" class="p-4 my-8 rounded-lg w-full bg-primary text-white font-bold">
+            <p class="text-secondary font-semibold text-lg text-center">Already have an account? <a class="text-primary"
+                    href="{%url 'login'%}">Log In</a> </p>
+        </form>
+    </div>
+</main>
+
+{%endblock%}

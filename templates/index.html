@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="A client portal which allows lawyers to securely share information online with their clients. This includes documents, messages, invoices, and much more.">
-    <title>CounselHub</title>
+    <title>{{title}}</title>
 
     {% tailwind_css %}
     <link rel="stylesheet" href="{% static 'users/styles.css'%}">
@@ -20,12 +20,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
     {% if messages %}
-    <ul class="messages">
+    <ul class="absolute top-2 left-2 p-4">
         {% for message in messages %}
         <li>{{ message }}</li>
         {% endfor %}

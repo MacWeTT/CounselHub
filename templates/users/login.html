@@ -1,9 +1,29 @@
 {%extends 'index.html'%}
-
-{%block title%}Home{%endblock%}
+{%load static%}
+{%block title%}Login | CounselHub{%endblock%}
 
 {%block content%}
 
-<h1>Login</h1>
+<main class="login relative w-screen h-screen">
+    <img src="{%static 'assets/ellipse.png'%}" class="absolute top-0 right-0 ellipse z-0">
+    <div class="login-container p-10 flex flex-col">
+        <h1 class="text-3xl font-bold text-primary text-center">Welcome Back</h1>
+        <h2 class="text-center text-secondary font-bold my-4">Enter your e-mail and password to login</h2>
+        <form method="post" class="m-4 text-2xl">
+            {%csrf_token%}
+            <label for="username">Username</label> <br>
+            <input type="username" name="username" id="username" class="p-4 rounded-lg w-full my-4 border-gray-300"
+                placeholder="Your e-mail address">
+            <br>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password" class="p-4 rounded-lg w-full my-4 border-gray-300"
+                placeholder="Your password">
+            <br>
+            <input type="submit" value="Login" class="p-4 my-8 rounded-lg w-full bg-primary text-white font-bold">
+            <p class="text-secondary font-semibold text-lg text-center">Don't Have an account ? <a class="text-primary"
+                    href="{%url 'signup'%}">Sign Up</a> </p>
+        </form>
+    </div>
+</main>
 
 {%endblock%}
