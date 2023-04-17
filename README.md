@@ -22,3 +22,10 @@ The process to do so is very simple. All you have to do is:
 6. Now, you have to initialize the database. Do so by running ``` python manage.py makemigrations ``` and then ```python manage.py migrate```.
 7. Once the process is complete, your project is ready. Run it by typing ``` python manaage.py runserver ```. It will run the application on ```localhost:8000```.
 8. You can now open the application which is hosted on ```port 8000``` on your PC.
+
+
+## Sreenshots
+![Home](/gitassets/Image (2).png)
+![Login](/gitassets/Image (3).png)
+![Signup](/gitassets/Image (4).png)
+![Dashboard](/gitassets/Image (1).png)
