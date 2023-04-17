@@ -25,7 +25,11 @@ The process to do so is very simple. All you have to do is:
 
 
 ## Sreenshots
-![Home](/gitassets/Image (2).png)
-![Login](/gitassets/Image (3).png)
-![Signup](/gitassets/Image (4).png)
-![Dashboard](/gitassets/Image (1).png)
+![Home](/gitassets/home.png)
+
+![Login](/gitassets/login.png)
+
+![Signup](/gitassets/signup.png)
+
+![Dashboard](/gitassets/dashboard.png)
+
