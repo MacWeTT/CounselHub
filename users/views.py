@@ -38,16 +38,20 @@ def LoginUser(request):
 def SignUpUser(request):
     if request.user.is_authenticated:
         return redirect('home')
-    
-    form = UserRegisterForm()
-    
+
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Account created successfully. You can now login.')
-            return redirect('home')
-        
+            user = form.save()
+            login(request ,user)
+            messages.success(request, 'Account created successfully.')
+            return redirect('profile')
+        else:
+            print(form.errors)
+            messages.error(request,"An error occured. Check if details are correct and password is valid.")
+    else:    
+        form = UserRegisterForm()
+    
     context = {'title': 'Signup | CounselHub','form': form}
         
     return render(request, 'users/signup.html', context)
@@ -62,12 +66,15 @@ def Profile(request):
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileForm(request.POST, instance=request.user.profile)
         
-        if u_form.is_valid and p_form.is_valid():
+        if u_form.is_valid() and p_form.is_valid():
             request.user.profile.is_complete = True
             u_form.save()
             p_form.save()
             messages.success(request, 'Profile updated successfully.')
-            return redirect('home')
+            if request.user.profile.profession == '1':
+                return redirect('lawyer-dashboard')
+            else:
+                return redirect('client-dashboard')
         else:
             messages.error(request, 'Error updating profile. Check if everything is correct.')
     else:

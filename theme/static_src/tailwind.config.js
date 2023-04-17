@@ -48,6 +48,7 @@ module.exports = {
                 'secondary': '#A0AEC0',
                 'tertiary': '#D6FEED',
                 'quaternary': '#E5FBF7',
+                'quinary': '#4FD1C5',
             }
         },
     },
