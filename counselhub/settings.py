@@ -31,7 +31,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    #Apps
     'users.apps.UsersConfig',
+    'lawyers.apps.LawyersConfig',
+    'clients.apps.ClientsConfig',
+    
+    #Tailwind
     'tailwind',
     'theme',
     'django_browser_reload'
