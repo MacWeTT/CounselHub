@@ -27,7 +27,7 @@ The process to do so is very simple. All you have to do is:
 7. Once the process is complete, your project is ready. Run it by typing `python manaage.py runserver`. It will run the application on `localhost:8000`.
 8. You can now open the application which is hosted on `port 8000` on your PC.
 
-## Sreenshots
+## UI Design
 
 ![Home](/gitassets/home.png)
 
